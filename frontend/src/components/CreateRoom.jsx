@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { baseUrl } from '.../util';
+import { baseURL } from '../util';
 
-const CreateRoom = ({ user, err, setErr, selectedUser}) => {
-    const [roomName, setRoomName] =useState("");
+const CreateRoom = ({ user, err, setErr, selectedUsers}) => {
+    const [roomName, setRoomName] = useState("");
 
     let navigate = useNavigate()
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { baseUrl } from '.../util';
+import { baseURL } from '../util';
 
 const Login = ({ setUser }) =>{
     const [userForm, setUserForm] = useState({

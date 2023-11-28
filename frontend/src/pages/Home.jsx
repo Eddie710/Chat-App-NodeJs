@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Header from '../components/Header'
-import ContactsList from '../components/ContactsList'
+import ContactsList from '../components/ContactList'
 import OpenChat from '../components/OpenChat'
 
 const Home = ({ user, logout }) => {

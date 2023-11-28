@@ -5,9 +5,9 @@ import axios from "axios";
 import { baseURL } from "./util";
 
 import Home from "./pages/Home"
-import Login from "./pages/Home"
-import Rooms from "./pages/Home"
-import SignUp from "./pages/Home"
+import Login from "./pages/Login"
+import Rooms from "./pages/Rooms"
+import SignUp from "./pages/SignUp"
 
 function App() {
   const [user, setUser] = useState()

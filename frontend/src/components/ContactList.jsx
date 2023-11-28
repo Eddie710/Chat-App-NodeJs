@@ -2,7 +2,7 @@ import React, { useState , useEffect } from 'react'
 import axios from 'axios'
 import { baseURL } from '../util/index'
 
-const ContactList = ({ user, setOpenChat }) => {
+const ContactsList = ({ user, setOpenChat }) => {
   const [showContacts, setShowContacts] = useState(true)
   const [showRooms, setShowRooms] = useState(true)
 
@@ -116,4 +116,4 @@ const ContactList = ({ user, setOpenChat }) => {
   )
 }
 
-export default ContactList
+export default ContactsList
