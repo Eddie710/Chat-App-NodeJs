@@ -2,12 +2,12 @@ import React, { useState , useEffect } from 'react'
 import axios from 'axios'
 import { baseURL } from '../util/index'
 
-const ContactsList = ({ user, setOpenChat }) => {
+const ContactList = ({ user, setOpenChat }) => {
   const [showContacts, setShowContacts] = useState(true)
   const [showRooms, setShowRooms] = useState(true)
 
   const [userList, setUserList] = useState([])
-  const [userRooms, setRoomsList] = useState([])
+  const [roomList, setRoomsList] = useState([])
 
   const fetchUsers = async () => {
     axios.get(`${baseURL}/users/${user._id}/contacts`, { withCredentials: true })
@@ -75,7 +75,7 @@ const ContactsList = ({ user, setOpenChat }) => {
   useEffect(() => {
     fetchUsers()
     fetchRooms()
-  })
+  }, [])
   
   return (
     <div id="contactsList">
@@ -116,4 +116,4 @@ const ContactsList = ({ user, setOpenChat }) => {
   )
 }
 
-export default ContactsList
+export default ContactList

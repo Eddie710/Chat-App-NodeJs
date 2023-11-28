@@ -6,8 +6,8 @@ const ChatBody = ({ openChat, user, messages }) => {
     const [members, setMembers] = useState({});
     useEffect(() =>{
         const getMembers = () =>{
-            openChat.members.forEach(async (memberId) => {
-                console.log('members')
+            console.log('members')
+            openChat.members.map(async (memberId) => {
                 await axios.get(`${baseURL}/users/${memberId}`).then((res)=>{
                     console.log(res.data)
                     if (res.data.user) {

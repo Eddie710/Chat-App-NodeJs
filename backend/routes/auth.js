@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const router = require("express").Router();
-
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
 const userSchema = require("../models/User");
 
 router.route("/register").post(async (req, res, next) =>{
@@ -34,7 +32,7 @@ router.route("/register").post(async (req, res, next) =>{
         })
         return next(error.message);
     });
-    res.send("register")
+    // res.send("register")
 });
 
 router.route("/login").post(async(req,res,next) =>{
@@ -68,10 +66,20 @@ router.route("/login").post(async(req,res,next) =>{
         });
         res.json({ user });
     })
-    .catch((error) =>{
-        console.log("login Error" + error.message);
-        return next(error)
-    });
-});
-
-module.exports = router;    
+    .catch(err => {
+        res.json({
+          Error: err
+        })
+        console.log(`login Error`)
+        return next(err.message)
+      })
+    // res.send('login')
+  })
+  
+  router.post('/logout', async (req, res, next) => {
+    res.send('logout')
+  })
+  
+  
+  
+  module.exports = router

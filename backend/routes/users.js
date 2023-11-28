@@ -79,7 +79,7 @@ router.route("/:userId/chat").post(async(req,res,next)=>{
     });
 });
 
-router.route("/userId/chat/:chatType").get(async(req,res,next)=>{
+router.route("/:userId/chat/:chatType").get(async(req,res,next)=>{
     await chatSchema
     .find({ type: req.params.chatType, members: { $in: [req.params.userId] } })
     .then((chats)=>{

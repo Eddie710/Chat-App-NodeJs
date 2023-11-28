@@ -13,10 +13,10 @@ const PORT = process.env.PORT || 4000;
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 
-const authMiddleware = require('./middleware/authmiddleware');
+const authMiddleware = require('./middleware/authMiddleware');
 
 const corsOptions = {
-    origin: ["http://localhost:5173"],
+    origin: [ "http://localhost:4000", "http://localhost:5173"],
     allowedHeaders: ['Origin', "X-Requested-With", "Content-Type", "Accept"],
     credentials: true,
     methods: ['GET', 'POST'],
