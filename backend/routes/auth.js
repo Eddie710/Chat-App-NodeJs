@@ -47,14 +47,14 @@ router.route("/login").post(async(req,res,next) =>{
             .json({message: "Incorrect Username or Password"})
         }
 
-        const passwordCorrect = bcrypt.compareSync(req.body.password, user.password)
+        const passwordCorrect = bcrypt.compareSync(password, user.password)
         if (!passwordCorrect) {
             return res
             .status(401)
             .json({ message: "Incorrect username or password"});
         }
 
-        const payload = { userID: user._id, username: user.username};
+        const payload = { userId: user._id, username: user.username};
 
         let token = jwt.sign(payload,process.env.JWT_SECRET, {
             expiresIn: "1d",

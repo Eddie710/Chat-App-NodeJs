@@ -19,12 +19,13 @@ const Login = ({ setUser }) =>{
         }));
     };
 
-    const handleSubmit = async (event) =>{
+    const handleSubmit = async (event) => {
         event.preventDefault();
         setErr();
 
         await axios.post(`${baseURL}/auth/login`, userForm, { withCredentials: true }).then((res)=>{
             if (res.data.user) {
+                console.log(res.data.user);     
                 setUser(res.data.user)
             }else{
                 setErr(res.data.error)

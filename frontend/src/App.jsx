@@ -16,9 +16,11 @@ function App() {
   useEffect(()=>{
     setUser()
     const verifyCookie = async () =>{
-      if (cookies.token && cookies.token !== 'undefined')  {
+      if (cookies.token && cookies.token !== undefined)  {
+        console.log(cookies.token)
         await axios.post(`${baseURL}/`, {}, { withCredentials: true })
         .then((res)=>{
+          console.log(res)
           setUser(res.data.user)
         }).catch(err =>{
           console.log(err)
